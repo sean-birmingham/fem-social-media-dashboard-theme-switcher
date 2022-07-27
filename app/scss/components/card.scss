@@ -18,13 +18,11 @@
   background-color: var(--dark-card);
   border-radius: rem(5);
   color: var(--dark-text);
-  width: rem(255); // TEMPORARY
   margin-bottom: rem(20);
-  padding: rem(20);
+  padding: rem(25);
   text-align: center;
   position: relative;
   overflow: hidden;
-  justify-self: center;
 
   &--facebook {
     border-top: rem(5) solid var(--facebook);
@@ -74,6 +72,12 @@
     margin-bottom: rem(28);
   }
 
+  &__subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+    margin-bottom: rem(30);
+  }
+
   &__icon {
     margin-right: rem(8);
   }
@@ -95,6 +99,11 @@
 
     &--big {
       font-size: rem(56);
+      font-weight: 700;
+    }
+
+    &--small {
+      font-size: rem(32);
       font-weight: 700;
     }
   }
