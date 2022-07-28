@@ -3,12 +3,11 @@
 .toggle {
   display: flex;
   justify-content: space-between;
-  gap: rem(4.8) rem(8);
   border: 0;
   padding: 0;
 
   @include breakpoint-down(small) {
-    border-top: 1px solid var(--light-text1);
+    border-top: 1px solid var(--text-color);
     width: 100%;
     padding: rem(20) 0;
   }
@@ -16,42 +15,29 @@
   label {
     font-size: rem(14);
     font-weight: 700;
-    color: var(--toggle);
+    color: var(--text-color2);
     align-self: center;
 
     &[for='dark'] {
-      grid-column: 1 / 2;
-      justify-self: end;
-    }
-  }
-
-  input[type='radio'] {
-    margin: 0 rem(-2) 0 rem(-2);
-    opacity: 0;
-    width: rem(20);
-    height: rem(24);
-
-    &:focus ~ .toggle__button {
-      border: 2px solid white;
+      line-height: rem(24);
+      margin-right: rem(13);
     }
   }
 
   &__wrapper {
     position: relative;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    width: rem(48);
     height: rem(24);
   }
 
   &__background {
     display: block;
+    height: 100%;
     position: absolute;
+    width: 100%;
     top: 0;
     border-radius: rem(12);
-    background: linear-gradient(225deg, var(--toggle-bg-start) 0%, var(--toggle-bg-end) 98.02%);
-    height: 100%;
-    width: 100%;
+    background: var(--toggle-bg);
+    pointer-events: none;
   }
 
   &__button {
@@ -59,10 +45,21 @@
     left: rem(3);
     top: rem(3);
     right: 100%;
-    background-color: var(--dark-bg);
     width: rem(18);
     height: rem(18);
     border-radius: 50%;
+    background-color: var(--toggle-button);
     transition: all 150ms ease-in-out;
+  }
+
+  #light:checked ~ .toggle__button {
+    left: calc(100% - 21px);
+    right: 3px;
+  }
+
+  #system:checked ~ .toggle__button {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%);
   }
 }

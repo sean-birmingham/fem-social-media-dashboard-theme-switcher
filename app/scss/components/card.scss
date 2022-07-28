@@ -12,17 +12,27 @@
   @include breakpoint(large) {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  @include breakpoint-down(small) {
+    gap: 0;
+  }
 }
 
 .card {
-  background-color: var(--dark-card);
+  background-color: var(--card-bg);
   border-radius: rem(5);
-  color: var(--dark-text);
+  color: var(--text-color2);
   margin-bottom: rem(20);
   padding: rem(25);
   text-align: center;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s;
+    background: var(--card-hover);
+  }
 
   &--facebook {
     border-top: rem(5) solid var(--facebook);
@@ -92,7 +102,7 @@
   }
 
   &__count {
-    color: var(--light);
+    color: var(--text-color);
     letter-spacing: rem(-2);
     line-height: 1;
     margin-bottom: rem(4);
@@ -109,7 +119,7 @@
   }
 
   &__label {
-    color: var(--dark-text);
+    color: var(--text-color2);
     letter-spacing: rem(5);
     font-size: rem(12);
     font-weight: 400;
