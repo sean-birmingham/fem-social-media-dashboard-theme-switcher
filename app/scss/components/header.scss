@@ -1,14 +1,22 @@
 @use '../util' as *;
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: rem(36);
+
   @include breakpoint(medium) {
-    display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__title {
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint-down(small) {
+      margin-bottom: rem(20);
+    }
   }
 
   &__subtitle {

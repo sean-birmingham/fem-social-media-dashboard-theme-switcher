@@ -1,12 +1,17 @@
 @use '../util/' as *;
 
 .toggle {
-  display: grid;
-  grid-template-columns: 1fr rem(60) 1fr;
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
   gap: rem(4.8) rem(8);
-  border: none;
-  margin: 0;
+  border: 0;
+  padding: 0;
+
+  @include breakpoint-down(small) {
+    border-top: 1px solid var(--light-text1);
+    width: 100%;
+    padding: rem(20) 0;
+  }
 
   label {
     font-size: rem(14);
@@ -35,6 +40,7 @@
     position: relative;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+    width: rem(48);
     height: rem(24);
   }
 
